@@ -1,9 +1,44 @@
 Rails.application.routes.draw do
+  resources :skills
+  
+  #resources :sessions
+  
+  get "sessions/index"
+
+  get "sessions/newProfesor"
+  post "sessions/newProfesor"
+  get "sessions/newEstudiante"
+
+  post "sessions/profesor"
+  get "sessions/profesor"
+
+  
+
+  get "sessions/estudiante"
+  post "sessions/estudiante"
+
+  get "sessions/logout"
+
+  post "archivos/subir_archivo"
+  get "archivos/subir_archivo"
+
+  get "archivos/consultar_notas_prof"
+
+  get "archivos/consultar_notas_est"
+
+  get "action_correo/enviarCorreo"
+  post "action_correo/enviarCorreo"
+   get "sessions/bienvenida"
+
+  get "action_correo/new"
+  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+   root  'sessions#index'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
